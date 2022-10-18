@@ -1,0 +1,57 @@
+/* @import url('https://fonts.googleapis.com/css?family=Comfortaa|Righteous'); */
+
+@import url("https://www.fontspace.com/arthemis-font-f84021");
+@import url(//db.onlinewebfonts.com/c/8ae6ef8481077b30d00858139a980140?family=BrushScriptW01);
+
+body {
+  /* background: url(https://cdn.pixabay.com/photo/2015/10/30/20/13/boat-1014711_960_720.jpg) no-repeat fixed; */
+  background-color: rgb(42, 54, 54);
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  background-position-x: center;
+  background-size: cover
+}
+
+h1 {
+  font-family: "Arthemis";
+  background: rgba(181, 187, 184, 0.932);
+  color: rgb(32, 54, 41);
+  margin: 5px;;
+  margin-bottom: .5em;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 55px;
+  font-stretch: ultra-expanded;
+}
+
+a {
+  color: rgb(248, 246, 242);
+  font-family: 'Arthemis';
+  font-size: 30px;
+  text-decoration: none;
+  margin: 30px;
+}
+
+a:hover {
+  color: ghostwhite;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  color: mediumseagreen;
+}
+
+input[type=text] {
+  padding: .3em;
+}
+
+input[type=submit] {
+  padding: .3em;
+  color: orange;
+  background: mediumseagreen;
+  font-size: 1em;
+  border-radius: 10%;
+}
