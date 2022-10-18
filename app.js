@@ -40,7 +40,7 @@ app.use('/user', require('./controllers/newUserRouter'))
 // }) 
 
 app.get('/', (req, res) => {
-  res.render('pages/HomePage')
+  res.render('pages/Homepage')
 }) 
 
 app.listen(PORT, () => {
