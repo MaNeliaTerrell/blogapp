@@ -11,35 +11,39 @@ class Blogs extends React.Component {
         return (
 
             <body style={myStyle.body}>
-                <div style={myStyle.font4}>
+                <div>
 
-                    <h2>Hello, {loggedInUser}</h2>
-                
+                <link rel="stylesheet" href="/CSS/app.css"/> 
+                    
+                    <h2 style={myStyle.font1}>Blogs</h2>
+                    <h2 style={myStyle.hello}>Hello, {loggedInUser} ! </h2>
+                    <br/>
                 <Navbar/>
 
-                    <h1 style={myStyle.font1}>Blogs</h1>
+                    <section style={myStyle.container}>{blogs.map((blog) => (
 
-                    <section style={myStyle.mainBlog}>{blogs.map((blog) => (
-
-                        <div key={blog._id}>
+                        <div key={blog._id} style={myStyle.wrapper}>
                             <a href={`blog/${blog._id}`} style={myStyle.font2}>{blog.title}</a>
                             <br />
+
                             {/* <p style={myStyle.font3}>{blog.body}</p> */}
                             <h4 style={myStyle.font4}>By: {blog.author}</h4>
 
-                            <form action={`/blog/${blog._id}?_method=DELETE`} method='POST'>
-                                <input type='submit' value='Delete' />
+                            <form action={`/blog/${blog._id}?_method=DELETE`} method='POST' style={myStyle.form}>
+                                <button type='submit' value='Delete' style={myStyle.editFont}>Delete</button>
                             </form>
-                            <a href={`/blog/${blog._id}/edit`}><button>Edit</button></a>
+                            <br/>
+                            <a href={`/blog/${blog._id}/edit`}>
+                                <button style={myStyle.editFont}>Edit</button></a>
                             <br />
-                            <br />
+
                             <a href={'/'} style={myStyle.font5}>Back to Homepage</a>
                             <br />
                             <br />
 
                             {blog.author === loggedInUser ? (
-                                <div>
-                                    <a href={`/blog/${blog._id}/edit`}>Edit</a>
+                                <div  >
+                                    <a href={`/blog/${blog._id}/edit`}  >Edit</a>
                                 </div>
                             ) : null}
 
@@ -54,9 +58,9 @@ class Blogs extends React.Component {
 }
 const myStyle = {
     body: {
-        backgroundColor: '#455a64',
+        backgroundImage: 'url(https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-fresh-light-green-plant-advertising-background-image_282287.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center center fixed',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         margin: '-8px',
         padding: '10px',
@@ -64,28 +68,29 @@ const myStyle = {
         backgroundAttachment: 'fixed',
     },
     mainBlog: {
-        textAlign: 'justify',
-        marginTop: '100px',
-        marginRight: '400px',
-        marginBottom: '150px',
-        marginLeft: '400px',
-        padding: '80px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+
     },
     font1: {
-        fontFamily: "Lucida Calligraphy",
-        color: 'white',
-        fontSize: '60px',
+        fontFamily: "Arthemis",
+        color: '#7f3b0b',
+        fontSize: '65px',
         textAlign: 'center',
-        marginTop: '60px',
-        marginBottom: '20px',
+        margin: '0em',
+        padding: '10px',
         fontStretch: 'ultra-expanded',
+        background: 'rgba(136, 163, 152, 0.486)',
+        
     },
     font2: {
-        color: 'white',
-        fontSize: '30px',
+        color: '#61021f',
+        fontSize: '25px',
         textAlign: 'center center',
         margin: '30px',
-        fontFamily: 'Calibri',
+        fontFamily: 'Montserrat, sansSerif',
+        textDecoration: 'none',
     },
     font3: {
         color: 'gold',
@@ -95,20 +100,58 @@ const myStyle = {
         fontFamily: 'Tahoma',
     },
     font4: {
-        color: 'cyan',
+        color: '#774215',
         fontSize: '15px',
-        textAlign: 'center center',
+        textAlign: 'center',
         margin: '30px',
-        fontFamily: 'Tahoma',
+        fontFamily: 'Montserrat, sansSerif',
     },
     font5: {
-        color: 'white',
-        fontSize: '25px',
-        textAlign: 'center center',
+        color: '#194d33',
+        fontSize: '15px',
         margin: '30px',
-        fontFamily: 'Tahoma',
-    }
+        fontFamily: 'Montserrat, sansSerif',
+    },
+    wrapper: {
+            padding: "5px",
+            margin: "30px",
+            width: "300px",
+            height: "350px",
+            border: "solid",
+            borderWidth: "1px",
+            borderColor: "black",
+            alignItems: 'center',
+            alignContent: 'center',
+            background: 'rgba(60, 30, 30, 0.05)',
+    },
+    container: {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        marginLeft: '50px',
+      },
+    editFont: {
+        color: 'rgb(6, 73, 36)',
+        fontWeight: 'bold',
+        padding: '3px',
+        fontSize: '12px',
+        textAlign: 'center',
+        alignItems: 'center',
+      },
+      hello: {
+        color: "#395766",
+        alignItems: "center",
+        textAlign: "center",
+        fontFamily: 'Comforter Brush, cursive',
+        fontSize: "40px",
+      },
+      form: {
+        alignItems: 'center',
+        alignContent: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+      }
 }
-
 
 module.exports = Blogs

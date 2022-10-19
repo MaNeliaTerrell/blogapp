@@ -6,8 +6,11 @@ class Navbar extends React.Component {
         const {loggedInUser} = this.props
         return (
 
-            <div>
-            <nav style={styles.container}>
+            <div >
+
+            <link rel="stylesheet" href="/CSS/app.css"/>
+
+            <nav styles={styles.nav}>
                 <a href='/'>Home</a>
                 <br/>
                 <a href='/blog'>Blogs</a>
@@ -28,12 +31,11 @@ class Navbar extends React.Component {
 }
 
 const styles = {
-    container : {
-        display:"flex",
-        justifyContent: 'space-between',
-        color: 'yellow',
-        fontSize: '20px',
+    nav: {
+        display: 'flex',
+        flexDirection: 'row',
+      }
     }
-}
+
 
 module.exports = Navbar

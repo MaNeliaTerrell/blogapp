@@ -7,26 +7,28 @@ class Show extends React.Component {
         const { blog } = this.props
         return (
             <body style={myStyle.body}>
-
+                
                 <h1>Blogs Show Page</h1>
                 
             <div style={myStyle.font1}>
-                
+            
+            <link rel="stylesheet" href="/CSS/app.css"/> 
 
-                    <h2>{blog.title}</h2>
-                    <br/>
-                    <h3>{blog.body}</h3> 
+                    <h3 style={myStyle.font2}>{blog.title}</h3>
                     <br/>
                     <img src={blog.image} style={myStyle.image}></img>
                     <br/>
+                    <p>{blog.body}</p> 
+                    <br/>
+                    
                     <h3>{blog.author}</h3>
 
                 Click to Like:<input type='checkbox' name='likes'/>
                 <br/>
                 <a href='/blog' style={myStyle.font2}>BACK to Blog List</a>
-                <br/>
+        
                 <a href={'/'}style={myStyle.font2}>Back to Homepage</a>
-                    
+                <br/>
             </div>
             </body>
         );
@@ -35,33 +37,36 @@ class Show extends React.Component {
 
 const myStyle = {
     body: {
-    backgroundImage: 'url("https://c4.wallpaperflare.com/wallpaper/580/751/766/earth-sunset-blue-horizon-wallpaper-preview.jpg")' ,
+    backgroundImage: 'url(https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-fresh-light-green-plant-advertising-background-image_282287.jpg)' ,
     backgroundSize: 'cover',
-    backgroundPosition: 'center center fixed',
+    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     margin: '20px',
     padding: '10px',
     width: '100%',
     backgroundAttachment: 'fixed',
+    alignItems: 'center',
+    justifyContent: 'center',
     },
     font1:{
-    color: 'white',
+    color: '#0f281c',
     fontSize: '20px',
-    textAlign: 'center center',
+    textAlign: 'center',
     margin: '30px',
-    fontFamily: 'Tahoma',
-    background: 'rgba(53, 26, 68, 0.55)',
+    fontFamily: 'Klee One, cursive',
+    background: 'rgba(53, 26, 68, 0.1)',
     },
     font2:{
-        color: 'cyan',
+        color: '#61021f',
         fontSize: '30px',
         textAlign: 'center center',
         margin: '30px',
-        fontFamily: 'Tahoma',
+        fontFamily: 'Oregano, cursive',
     },
     image: {
-        width: '350px',
-        height: '250px',
+        width: '300px',
+        height: '200px',
+        textAlign: 'center',
     }
 }
 

@@ -12,7 +12,7 @@ class HomePage extends React.Component {
                 <link rel="stylesheet" href="/CSS/app.css"/> 
                 </header>
 
-                <h1>Welcome to Marinel's Blog App</h1>
+                <h1>Of Mere Serendipity</h1>
 
                 {/* <h3 style={styles.font1}>Hello,{loggedInUser}</h3> */}
 
