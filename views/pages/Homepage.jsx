@@ -23,12 +23,5 @@ class HomePage extends React.Component {
     }
 }
 
-const styles={
-    font1:{
-        color: 'gold',
-        fontSize: '35px',
-        textAlign: 'center',
-        fontFamily: 'Papyrus',
-    }
-}
+
 module.exports = HomePage

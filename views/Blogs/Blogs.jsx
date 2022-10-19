@@ -13,12 +13,12 @@ class Blogs extends React.Component {
             <body style={myStyle.body}>
                 <div>
 
-                <link rel="stylesheet" href="/CSS/app.css"/> 
-                    
+                    <link rel="stylesheet" href="/CSS/app.css" />
+
                     <h2 style={myStyle.font1}>Blogs</h2>
                     <h2 style={myStyle.hello}>Hello, {loggedInUser} ! </h2>
-                    <br/>
-                <Navbar/>
+                    <br />
+                    <Navbar />
 
                     <section style={myStyle.container}>{blogs.map((blog) => (
 
@@ -26,26 +26,22 @@ class Blogs extends React.Component {
                             <a href={`blog/${blog._id}`} style={myStyle.font2}>{blog.title}</a>
                             <br />
 
-                            {/* <p style={myStyle.font3}>{blog.body}</p> */}
                             <h4 style={myStyle.font4}>By: {blog.author}</h4>
 
+                            {blog.author === loggedInUser ? (
                             <form action={`/blog/${blog._id}?_method=DELETE`} method='POST' style={myStyle.form}>
-                                <button type='submit' value='Delete' style={myStyle.editFont}>Delete</button>
-                            </form>
-                            <br/>
-                            <a href={`/blog/${blog._id}/edit`}>
-                                <button style={myStyle.editFont}>Edit</button></a>
+                                <button type='submit' value='Delete' style={myStyle.button}>Delete</button>
+                            </form> ) : null}
+
+                            <br />
+                            {blog.author === loggedInUser ? (
+                                <a href={`/blog/${blog._id}/edit`}>
+                                    <button style={myStyle.button}>Edit</button></a>) : null}
                             <br />
 
                             <a href={'/'} style={myStyle.font5}>Back to Homepage</a>
                             <br />
                             <br />
-
-                            {blog.author === loggedInUser ? (
-                                <div  >
-                                    <a href={`/blog/${blog._id}/edit`}  >Edit</a>
-                                </div>
-                            ) : null}
 
                         </div>
                     ))}
@@ -82,7 +78,7 @@ const myStyle = {
         padding: '10px',
         fontStretch: 'ultra-expanded',
         background: 'rgba(136, 163, 152, 0.486)',
-        
+
     },
     font2: {
         color: '#61021f',
@@ -113,16 +109,16 @@ const myStyle = {
         fontFamily: 'Montserrat, sansSerif',
     },
     wrapper: {
-            padding: "5px",
-            margin: "30px",
-            width: "300px",
-            height: "350px",
-            border: "solid",
-            borderWidth: "1px",
-            borderColor: "black",
-            alignItems: 'center',
-            alignContent: 'center',
-            background: 'rgba(60, 30, 30, 0.05)',
+        padding: "5px",
+        margin: "30px",
+        width: "300px",
+        height: "350px",
+        border: "solid",
+        borderWidth: "1px",
+        borderColor: "black",
+        alignItems: 'center',
+        alignContent: 'center',
+        background: 'rgba(60, 30, 30, 0.05)',
     },
     container: {
         display: "flex",
@@ -130,28 +126,28 @@ const myStyle = {
         flexWrap: "wrap",
         justifyContent: "center",
         marginLeft: '50px',
-      },
-    editFont: {
+    },
+    button: {
         color: 'rgb(6, 73, 36)',
         fontWeight: 'bold',
         padding: '3px',
         fontSize: '12px',
         textAlign: 'center',
         alignItems: 'center',
-      },
-      hello: {
+    },
+    hello: {
         color: "#395766",
         alignItems: "center",
         textAlign: "center",
         fontFamily: 'Comforter Brush, cursive',
-        fontSize: "40px",
-      },
-      form: {
+        fontSize: "50px",
+    },
+    form: {
         alignItems: 'center',
         alignContent: 'center',
         display: 'flex',
         justifyContent: 'center',
-      }
+    }
 }
 
 module.exports = Blogs

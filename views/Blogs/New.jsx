@@ -2,32 +2,32 @@ const React = require('react')
 
 
 class New extends React.Component {
-    render(){
-        return(
+    render() {
+        return (
             <body style={myStyles.body}>
-            <div>
-            <link rel="stylesheet" href="/CSS/app.css"/> 
-                <h1 style={myStyles.font1}>Add New Blog</h1>
+                <div>
+                    <link rel="stylesheet" href="/CSS/app.css" />
+                    <h1 style={myStyles.font1}>Add New Blog</h1>
 
-                <form action='/blog' method='POST' style={myStyles.font2}>
-                    title: <input type='text' name='title' style={myStyles.inputBox} required/>
-                    <br/>
-                    body: 
-                    <br/><textarea  name="body" placeholder="body" rows="20" cols="60" required />
-                    <br/>
-                    image url: <input type='url' name='image' style={myStyles.inputBox}></input>
-                    <br/>
-                    author: <input type='text' name='author'style={myStyles.inputBox} required/>
-                    <br/>
-                    
-                    Create a New Blog: <input type='submit' value="Let's Go!"/>
-                    <br/>
-                    sponsored: <input type='checkbox'/>
-                    <br/>
-                    <br/>
-                    <a href={'/'}>Back to Homepage</a>
-                </form>
-            </div>
+                    <form action='/blog' method='POST' style={myStyles.font2}>
+                        title: <input type='text' name='title' style={myStyles.inputBox} required />
+                        <br />
+                        body:
+                        <br /><textarea name="body" placeholder="body" rows="20" cols="60" required />
+                        <br />
+                        image url: <input type='url' name='image' style={myStyles.inputBox}></input>
+                        <br />
+                        author: <input type='text' name='author' style={myStyles.inputBox} required />
+                        <br />
+
+                        Create a New Blog: <input type='submit' value="Let's Go!" style={myStyles.button}/>
+                        <br />
+                        sponsored: <input type='checkbox' />
+                        <br />
+                        <br />
+                        <a href={'/'}>Back to Homepage</a>
+                    </form>
+                </div>
             </body>
         )
     }
@@ -58,7 +58,7 @@ const myStyles = {
         fontStretch: 'ultra-expanded',
         background: 'rgba(136, 163, 152, 0.486)',
     },
-    font2:{
+    font2: {
         color: '#0f281c',
         fontSize: '20px',
         textAlign: 'center',
@@ -66,7 +66,15 @@ const myStyles = {
         fontFamily: 'Klee One, cursive',
         background: 'rgba(53, 26, 68, 0.1)',
         justifyContent: 'center',
-        },
+    },
+    button: {
+        color: 'rgb(6, 73, 36)',
+        fontWeight: 'bold',
+        padding: '3px',
+        fontSize: '12px',
+        textAlign: 'center',
+        alignItems: 'center',
+    }
 }
 
 module.exports = New
